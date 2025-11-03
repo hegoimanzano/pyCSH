@@ -1,11 +1,12 @@
+import numpy as np
 seed = 23137
-shape = (4,4,2)   # Minimum (1,1,1)
-Ca_Si_ratio = 1.5
+size = (3,3,2)   # Minimum (1,1,1)
+Ca_Si_ratio = 1.4
 W_Si_ratio  = 1.0
 
-prefix = "CaSi1.5"
+prefix = "CaSi"+str(Ca_Si_ratio)
 
-N_samples = 10
+N_samples = 1
 make_independent = True
 
 
@@ -18,12 +19,22 @@ create =True
 check = False
 
 
-write_lammps = False
-write_lammps_erica = True
-write_vasp = True
+write_lammps = True
+write_lammps_erica = False
+write_vasp = False
 write_siesta = False
 
+orthogonal = True
+shift = False
+diferentiate = True
+dpore = 10
 
+guest_ions = False
+
+#substitute = np.array([["Ca", "Zn", 5, 0.848],["Ca", "Mn", 5, 0.848],["Si", "Mn", 7, 0.848]], dtype = object)
+substitute = np.array([["Ca1", "Zn", 5, 0.848],["Ca2", "Mn", 5, 0.848]], dtype = object) #sustituted ele, sustitute ele , sustitution %, charge
+saturation = True
+grid = np.array([5, 10, 5, "Cl", 2, "Na", 1], dtype = object)
 
 
 # The input below allows to read a handmade brick code

@@ -80,7 +80,7 @@ def plot_MCL(list_properties):
 
 	plt.tick_params(labelsize=12)
 
-	plt.tight_layout()
+	#plt.tight_layout()
 	#plt.show()
 	plt.savefig( "MCL.pdf" )
 	plt.clf()
